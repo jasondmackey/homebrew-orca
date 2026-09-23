@@ -5,8 +5,7 @@ cask "orca" do
   sha256 arm:   "8d4bdfa03fb0c21bff2fa32c7651a71d6acc95c9ed23adf5b00f7dc5a52a9afd",
          intel: "a68337f16f694aa6b889f6d6146a43e346e600431e1591af6b64f4a4c16d43bd"
 
-  url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-#{arch}.dmg",
-      verified: "github.com/stablyai/orca/"
+  url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-#{arch}.dmg"
   name "Orca"
   desc "IDE for orchestrating AI coding agents across terminals and worktrees"
   homepage "https://onorca.dev/"
@@ -23,10 +22,9 @@ cask "orca" do
   # metadata stays aligned with whatever the app has swapped itself to.
   auto_updates true
   conflicts_with cask: "orca@rc"
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "Orca.app"
-
   # Why: expose the bundled `orca` CLI on PATH at install time (Homebrew symlinks
   # this into its already-on-PATH bin dir). Without it, the CLI is only registered
   # by the in-app "Install CLI" action, which a headless host can never trigger —

@@ -5,8 +5,7 @@ cask "orca@rc" do
   sha256 arm:   "c5958761fe2afa735ed02dbdad3d566c7463364e3fa61e47da22f4133f6e169e",
          intel: "dc5283e1ee181194653c3805e473187367a8c44886ccb2d181320ab2fae998c2"
 
-  url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-#{arch}.dmg",
-      verified: "github.com/stablyai/orca/"
+  url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-#{arch}.dmg"
   name "Orca RC"
   desc "IDE for orchestrating AI coding agents across terminals and worktrees"
   homepage "https://onorca.dev/"
@@ -31,10 +30,9 @@ cask "orca@rc" do
   # waiting for Homebrew metadata churn between frequent release candidates.
   auto_updates true
   conflicts_with cask: "orca"
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "Orca.app"
-
   # Why: expose the bundled `orca` CLI on PATH at install time (Homebrew symlinks
   # this into its already-on-PATH bin dir). Without it, the CLI is only registered
   # by the in-app "Install CLI" action, which a headless host can never trigger —
